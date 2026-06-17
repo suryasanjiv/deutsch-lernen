@@ -1,42 +1,28 @@
 ---
 name: vitest-unit-tests
-description: >
-  Use this skill whenever the user asks to create, update, fix, refactor, or improve unit tests
-  in a project that uses Vitest. Trigger for requests mentioning Vitest, vi, describe/it/expect,
-  unit tests, test coverage, failing tests, regression tests, .test.ts, .spec.ts, .test.tsx,
-  or .spec.tsx. Also trigger when production code changes and matching Vitest tests likely need
-  to be added or updated — even if the user doesn't explicitly mention tests. If a user shares
-  a function, module, or component and asks you to "make sure it works," "add coverage," or
-  "verify behavior," use this skill. Do not use for Playwright/Cypress end-to-end tests or
-  Jest-only projects unless the user asks to migrate to Vitest.
+description: Create, update, fix, refactor, or improve Vitest unit tests for TypeScript, JavaScript, React, Node, service, utility, and library code.
 when_to_use: >
-  Use for TypeScript, JavaScript, React, Node, library, service, and utility tests where Vitest
-  is the test runner. In greenfield projects, establish a clear, consistent test style instead of
-  relying on pre-existing test conventions.
+  Use when the user mentions Vitest, vi, describe/it/expect, unit tests, test coverage,
+  failing tests, regression tests, .test.ts, .spec.ts, .test.tsx, or .spec.tsx.
+  Also use when production code changes and matching Vitest tests likely need to be added
+  or updated. In greenfield projects, establish a clear, consistent test style instead of
+  relying on pre-existing conventions. Do not use for Playwright/Cypress end-to-end tests
+  or Jest-only projects unless migrating to Vitest.
 argument-hint: "[target file, behavior to cover, failing test output, or feature]"
-allowed-tools: Read Grep Glob Edit MultiEdit Bash
-paths:
-  - "**/*.ts"
-  - "**/*.tsx"
-  - "**/*.js"
-  - "**/*.jsx"
-  - "**/*.test.ts"
-  - "**/*.spec.ts"
-  - "**/*.test.tsx"
-  - "**/*.spec.tsx"
-  - "**/vitest.config.*"
-  - "**/package.json"
-  - "**/pnpm-lock.yaml"
-  - "**/yarn.lock"
-  - "**/package-lock.json"
-  - "**/bun.lock*"
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Edit
+  - Write
+  - Bash
 ---
 
 # Vitest Unit Tests
 
 Create, update, repair, or improve Vitest unit tests.
 
-This project is greenfield — establish and preserve a consistent test style.
+If the project already has tests, match their established style. If it's greenfield, establish a clean, consistent one and preserve it.
 
 Target request: `$ARGUMENTS`
 
@@ -46,7 +32,7 @@ Target request: `$ARGUMENTS`
 
 ### File placement
 
-Place `*.test.ts` (or `*.test.tsx` for React) next to the file under test. Shared helpers go in `src/test/` but only after duplication appears across two or three test files.
+Place `*.test.ts` or `*.test.tsx` next to the file under test. Shared helpers go in `src/test/` only after duplication appears across two or three test files.
 
 ### Imports and structure
 
